@@ -47,6 +47,9 @@ inputs:
   reason:
     description: Reason for claiming the deployment lock for this repository
     required: false
+  lock_owner:
+    description: 'Lock owner'
+    required: false
 outputs:
   triggered:
     description: 'The string "true" if the trigger was found, otherwise the string "false"'

@@ -11100,6 +11100,11 @@ async function run() {
     const lock_info_alias = core.getInput('lock_info_alias')
     const lock_mode = core.getInput('mode')
     const environment = core.getInput('environment') // the env to lock/unlock/check
+    const lock_owner = core.getInput('lock_owner')
+
+    if (lock_owner) {
+      github.context.actor = lock_owner
+    }
 
     // Get variables from the event context
     const {owner, repo} = github.context.repo
